@@ -41,6 +41,7 @@
     "maptalks": "^0.49.5",
     "nprogress": "^0.2.0",
     "qs": "^6.10.3",
+    "screenfull": "^5.2.0",
     "sortablejs": "^1.14.0",
     "vab-icon": "^0.0.1",
     "vue": "^2.6.14",
@@ -51,7 +52,6 @@
     "zx-count": "^0.3.7",
     "zx-layouts": "^0.6.28",
     "zx-player": "^1.0.2",
-    "zx-quill": "^0.0.3",
     "zx-templates": "^0.0.26",
     "zx-verify": "^0.0.2"
   },

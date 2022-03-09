@@ -148,24 +148,24 @@ module.exports = {
     })
 
     if (build7z) {
-      config.when(process.env.NODE_ENV === 'production', (config) => {
-        config
-          .plugin('fileManager')
-          .use(FileManagerPlugin, [
-            {
-              onEnd: {
-                delete: [`./${outputDir}/video`, `./${outputDir}/data`],
-                archive: [
-                  {
-                    source: `./${outputDir}`,
-                    destination: `./${outputDir}/${abbreviation}_${outputDir}_${date}.7z`,
-                  },
-                ],
-              },
-            },
-          ])
-          .end()
-      })
+      // config.when(process.env.NODE_ENV === 'production', (config) => {
+      //   config
+      //     .plugin('fileManager')
+      //     .use(FileManagerPlugin, [
+      //       {
+      //         onEnd: {
+      //           delete: [`./${outputDir}/video`, `./${outputDir}/data`],
+      //           archive: [
+      //             {
+      //               source: `./${outputDir}`,
+      //               destination: `./${outputDir}/${abbreviation}_${outputDir}_${date}.7z`,
+      //             },
+      //           ],
+      //         },
+      //       },
+      //     ])
+      //     .end()
+      // })
     }
   },
   runtimeCompiler: true,

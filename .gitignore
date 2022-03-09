@@ -18,7 +18,6 @@ public/video
 *.zip
 *.7z
 /src/layouts/components/zx-layouts
-/zx-templates
 /package-lock.json
 /src/styles/themes/green.scss
 /src/styles/themes/dark.scss
