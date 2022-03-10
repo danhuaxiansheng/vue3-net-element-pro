@@ -224,7 +224,7 @@
       },
 
       jumpCenter() {
-        this.$router.push('/personalCenter/personalInfo')
+        this.$router.push('/personalInfo')
       },
       // 点赞
       addGoods(item) {

@@ -5,7 +5,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Layout from '@/layouts'
-// import EmptyLayout from '@/layouts/EmptyLayout'
 import { publicPath, routerMode } from '@/config'
 
 // 解决重复push路由 导致的报错
@@ -46,23 +45,21 @@ export const constantRoutes = [
   {
     path: '/',
     component: Layout,
-    redirect: '/system/index',
+    redirect: '/index',
     children: [
       {
         path: 'index',
         name: 'Index',
         component: () => import('@/views/index/index'),
         meta: {
-          title: '首页',
-          icon: 'home',
+          title: '系统概要',
+          icon: 'box',
           affix: true,
         },
       },
     ],
   },
 ]
-
-export const asyncRoutes = []
 
 const router = new VueRouter({
   base: publicPath,

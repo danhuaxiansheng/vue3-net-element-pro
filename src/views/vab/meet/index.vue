@@ -2,7 +2,7 @@
   <div v-loading="pageloading" class="page-container">
     <vab-query-form>
       <vab-query-form-left-panel :span="12">
-        <el-button type="primary" @click="addMeet">新增资料</el-button>
+        <el-button type="primary" @click="addMeet">新建</el-button>
       </vab-query-form-left-panel>
       <vab-query-form-right-panel :span="12">
         <el-form :inline="true" :model="queryForm" @submit.native.prevent>
@@ -79,6 +79,11 @@
         this.$refs.pageTable.tableSearch()
       },
       getConditions(conditions) {
+        conditions.push({
+          field: 'createid',
+          type: '等于',
+          value: this.$store.state.user.userid,
+        })
         if (this.queryForm.title && this.queryForm.title.length > 0) {
           conditions.push({
             field: 'title',

@@ -47,7 +47,7 @@
         }
       },
       personalCenter() {
-        this.$router.push('/personalCenter/personalInfo')
+        this.$router.push('/personalInfo')
       },
       logout() {
         this.$baseConfirm(

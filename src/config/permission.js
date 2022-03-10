@@ -36,17 +36,9 @@ router.beforeResolve(async (to, from, next) => {
         next()
       } else {
         try {
-          let accessRoutes = []
-          let roleisd = []
-          let menuList = []
-          if (authentication === 'intelligence') {
-            roleisd = await store.dispatch('user/getInfo')
-            menuList = await store.dispatch('user/getMenuList', roleisd)
-            accessRoutes = await store.dispatch('routes/setRoutes', menuList)
-          } else if (authentication === 'all') {
-            accessRoutes = []
-          }
-          // router.addRoute(accessRoutes)
+          let roleisd = await store.dispatch('user/getInfo')
+          let menuList = await store.dispatch('user/getMenuList', roleisd)
+          let accessRoutes = await store.dispatch('routes/setRoutes', menuList)
           accessRoutes.forEach((item) => {
             router.addRoute(item)
           })
