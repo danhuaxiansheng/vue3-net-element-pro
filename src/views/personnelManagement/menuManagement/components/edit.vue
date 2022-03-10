@@ -14,6 +14,7 @@
       :model="dataRow"
       label-width="80px"
       label-position="rigth"
+      class="el-form"
     >
       <el-form-item label="上级菜单">
         <el-popover
@@ -38,13 +39,11 @@
           />
         </el-popover>
       </el-form-item>
-      <template v-for="item in column">
-        <el-col :key="item.prop" :span="12">
-          <FormItem v-model="item.value" v-bind="item"></FormItem>
-        </el-col>
-      </template>
+      <el-col v-for="item in column" :key="item.prop" :span="12">
+        <FormItem v-model="item.value" v-bind="item"></FormItem>
+      </el-col>
     </el-form>
-    <div style="text-align: right">
+    <div slot="footer" style="text-align: right">
       <el-button @click="cancel">取消</el-button>
       <el-button type="primary" @click="confirmRole">确认</el-button>
     </div>
@@ -116,7 +115,13 @@
           },
           {
             prop: 'component',
-            label: '模板路径',
+            label: '模板名称',
+            type: 'input',
+            dataType: 'string',
+          },
+          {
+            prop: 'filepath',
+            label: '文件路径',
             type: 'input',
             dataType: 'string',
           },
@@ -280,4 +285,9 @@
     },
   }
 </script>
-<style lang="sass" scoped></style>
+
+<style lang="scss" scoped>
+  .el-form {
+    height: 285px;
+  }
+</style>
